@@ -14,9 +14,8 @@
       namespace: clusterfuck
     syncPolicy:
       automated:
-        ApplyOutOfSyncOnly: true
-        Prune: true
+        prune: true
         selfHeal: true
       syncOptions:
-         CreateNamespace: true
-         PruneLast: true
+        - CreateNamespace=true
+        - PruneLast=true
