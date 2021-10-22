@@ -11,13 +11,12 @@
       path: clusterfuck
     destination:
       server: https://kubernetes.default.svc
-      namespace: guestbook
+      namespace: clusterfuck
     syncPolicy:
       automated:
         ApplyOutOfSyncOnly: true
         Prune: true
         selfHeal: true
       syncOptions:
-         - CreateNamespace=true
-         - PruneLast=true
-  
+         CreateNamespace: true
+         PruneLast: true
