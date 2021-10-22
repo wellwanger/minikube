@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: clust3rf8ck
+  name: clust3rf8ck
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clust3rf8ck
+  template:
+    metadata:
+      labels:
+        app: clust3rf8ck
+    spec:
+      containers:
+      - image: eurogig/clust3rf8ck:0.1
+        name: clust3rf8ck
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: clust3rf8ck
+  name: cflb
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: clust3rf8ck
+  type: LoadBalancer
+status:
+  loadBalancer: {}
